@@ -13,18 +13,18 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
   //LLAMADA A LA API
-  const url = "https://api.escuelajs.co/api/v1/products";
+  const url = "https://fakestoreapi.com/products";
 
   const getProductos = async () => {
     const res = await fetch(url);
     const data = await res.json();
     productos = data.slice(1, 9);
-    console.log(productos);
+    console.log("asd", productos);
     //CARGAR LOS DATOS EN UNA CARD
     productos.forEach((product) => {
       productContainer.innerHTML += `
                 <div class="card " style="width: 18rem;" id="${product.id}" >
-                    <img src="${product.images[0]}" class="card-img-top" alt="${product.title}">
+                    <img src="${product.image}" class="card-img-top" alt="${product.title}">
                     <div class="card-body">
                         <h4 class="card-title">${product.title}</h4>
                         <p class="card-text">${product.description}</p>
@@ -112,7 +112,7 @@ document.addEventListener("DOMContentLoaded", function () {
             cartContainer.innerHTML += `
             <div class="cart-row">
                 <div class="cart-item cart-column">
-                    <img class="cart-item-image" src="${item.images[0]}" width="100" height="100">
+                    <img class="cart-item-image" src="${item.image}" width="100" height="100">
                     <span class="cart-item-title">${item.title}</span>
                 </div>
                 <span class="cart-price cart-column">$${item.price}</span>
