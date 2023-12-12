@@ -169,7 +169,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const loginPassword = document.getElementById("password_login").value;
 
         // Obtener los datos almacenados
-        const storedUserData = JSON.parse(localStorage.getItem("users"));
+        const storedUserData = JSON.parse(localStorage.getItem("userData"));
         const usuarioPrueba = storedUserData.find((user) => user.usuario == loginUsuario)
         console.log(usuarioPrueba)
         if (usuarioPrueba.password === loginPassword && usuarioPrueba.usuario === loginUsuario) {
